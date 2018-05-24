@@ -83,8 +83,8 @@ def index():
     #     is_super=0,
     #     role_id=1
     #     )
-    db.session.add(admin)
-    db.session.commit()
+    # db.session.add(admin)
+    # db.session.commit()
     
     return redirect(url_for('admin.tag_list', page=1))
 
