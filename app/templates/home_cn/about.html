@@ -1,0 +1,21 @@
+{% extends "home_cn/home.html" %}
+{% import "ui/home_page.html" as pg %}
+{% block content %}
+
+    <div class="row">
+        <div class="col-xs-12">
+          <h2 class="page-header">
+            <i class="fa fa-globe"></i> 关于我们
+            <small class="pull-right"></small>
+          </h2>
+        </div>
+        <!-- /.col -->
+      </div>
+
+    <div class="timeline-item">
+        <div class="timeline-body">
+            {{ about.info |safe }}
+        </div>
+    </div>
+
+{% endblock %}

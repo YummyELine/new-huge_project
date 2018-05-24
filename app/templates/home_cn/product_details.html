@@ -1,0 +1,68 @@
+{% extends "home_cn/home.html" %}
+{% block css %}
+    <!--播放页面-->
+    <link rel="stylesheet" type="text/css"
+          href="{{ url_for('static',filename='static/jwplayer/skins/stormtrooper.css') }}">
+    <script type="text/javascript" src="{{ url_for('static',filename='static/ueditor/ueditor.config.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='static/ueditor/ueditor.all.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='static/ueditor/lang/zh-cn/zh-cn.js') }}"></script>
+    <script>
+        SyntaxHighlighter.all();
+    </script>
+    <style>
+        .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+            padding-right: 3px;
+            padding-left: 3px;
+        }
+    </style>
+    <!--播放页面-->
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" style="height:500px;">
+                <div class="form-group">
+                    <img src="{{ url_for('static',filename='uploads/'+product.logo) }}"
+                         style="margin-top:5px;" class="img-responsive"
+                         alt="">
+                </div>
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span class="glyphicon glyphicon-inbox"></span>&nbsp;产品介绍</h3>
+                    </div>
+                    <div class="panel-body" style="height:459px;">
+                        <table class="table">
+                            <tr>
+                                <td style="width:30%;color:#ccc;font-weight:bold;font-style:italic;">
+                                    <span class="glyphicon glyphicon-barcode"></span>&nbsp;产品名称
+                                </td>
+                                <td>{{ product.title }}</td>
+                            </tr>
+                            <tr>
+                                <td style="color:#ccc;font-weight:bold;font-style:italic;">
+                                    <span class="glyphicon glyphicon-tag"></span>&nbsp;类别
+                                </td>
+                                <td>{{ product.tag.name }}</td>
+                            </tr>
+                            <tr>
+                                <td style="color:#ccc;font-weight:bold;font-style:italic;">
+                                    <span class="glyphicon glyphicon-calendar"></span>&nbsp;上架时间
+                                </td>
+                                <td>{{ product.release_time }}</td>
+                            </tr>
+
+                            <tr>
+                                <td style="color:#ccc;font-weight:bold;font-style:italic;">
+                                    <span class="glyphicon glyphicon-info-sign"></span>&nbsp;产品介绍
+                                </td>
+                                <td>
+                                    {{ product.info|safe }}
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
