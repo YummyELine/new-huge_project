@@ -1,11 +1,11 @@
-{% extends "home_en/home.html" %}
+{% extends "home_en/home_en.html" %}
 {% import "ui/home_page_en.html" as pg %}
 {% block content %}
 
     <div class="row">
         <div class="col-xs-12">
             <h2 class="page-header">
-                <i class="fa fa-globe"></i> 联系我们
+                <i class="fa fa-globe"></i> Contact
                 <small class="pull-right"></small>
             </h2>
         </div>
@@ -14,7 +14,7 @@
 
     <div class="timeline-item">
         <div class="timeline-body">
-            {{ contact.info |safe }}
+            {{ contact.info_en |safe }}
         </div>
     </div>
 

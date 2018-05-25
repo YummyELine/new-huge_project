@@ -36,7 +36,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="{{ url_for('home_cn.index') }}" class="navbar-brand" style="width:250px;">
+            <a href="{{ url_for('home_en.index') }}" class="navbar-brand" style="width:250px;">
                 <img src="{{ url_for('static',filename='static/base/images/logo.png') }}" style="height:30px;">&nbsp;New-Huge
             </a>
         </div>
@@ -45,7 +45,7 @@
         <div class="navbar-collapse collapse">
             <form class="navbar-form navbar-left" role="search" style="margin-top:18px;">
                 <div class="form-group input-group">
-                    <input type="text" class="form-control" placeholder="请输入产品名！" id="key_movie">
+                    <input type="text" class="form-control" placeholder="please input the product name!" id="key_movie">
                     <span class="input-group-btn">
                         <a class="btn btn-default" id="do_search"><span class="glyphicon glyphicon-search"></span>&nbsp;search</a>
                     </span>
@@ -54,19 +54,19 @@
             <ul class="nav navbar-nav navbar-right">
 
                 <li>
-                    <a class="curlink" href="{{ url_for('home_cn.about') }}"><span
+                    <a class="curlink" href="{{ url_for('home_en.about') }}"><span
                             class="glyphicon glyphicon-question-sign"></span>&nbsp;About us</a>
                 </li>
                 <li>
-                    <a class="curlink" href="{{ url_for('home_cn.product',page=1) }}"><span
+                    <a class="curlink" href="{{ url_for('home_en.product',page=1) }}"><span
                             class="glyphicon glyphicon-inbox"></span>&nbsp;Products</a>
                 </li>
 
                 <li>
-                    <a class="curlink" href="{{ url_for('home_cn.contact') }}"><span class="glyphicon glyphicon-user"></span>&nbsp;Contact</a>
+                    <a class="curlink" href="{{ url_for('home_en.contact') }}"><span class="glyphicon glyphicon-user"></span>&nbsp;Contact</a>
                 </li>
                 <li>
-                    <a class="curlink" href="#"><span class="glyphicon glyphicon-font"></span>&nbsp;中文版</a>
+                    <a class="curlink" href="{{ url_for('home_cn.about') }}"><span class="glyphicon glyphicon-font"></span>&nbsp;中文版</a>
                 </li>
             </ul>
         </div>
@@ -88,7 +88,7 @@
         <div class="row">
             <div class="col-md-12">
                 <p>
-                    ©&nbsp;2017&nbsp;flaskmovie.imooc.com&nbsp;京ICP备 13046642号-2
+                    Copyright©&nbsp;2018&nbsp;by New-Huga.cn All Rights Reserved.&nbsp;
                 </p>
             </div>
         </div>
@@ -114,7 +114,7 @@
         });
         $("#do_search").click(function () {
             var key = $("#key_movie").val();
-            location.href = "{{ url_for('home_cn.search',page=1) }}?key=" + key;
+            location.href = "{{ url_for('home_en.search',page=1) }}?key=" + key;
         })
     });
 

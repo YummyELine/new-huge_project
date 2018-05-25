@@ -28,21 +28,21 @@
                 </div>
                 <div class="panel panel-info">
                     <div class="panel-heading">
-                        <h3 class="panel-title"><span class="glyphicon glyphicon-inbox"></span>&nbsp;产品介绍</h3>
+                        <h3 class="panel-title"><span class="glyphicon glyphicon-inbox"></span>&nbsp;Product Description</h3>
                     </div>
                     <div class="panel-body" style="height:459px;">
                         <table class="table">
                             <tr>
                                 <td style="width:30%;color:#ccc;font-weight:bold;font-style:italic;">
-                                    <span class="glyphicon glyphicon-barcode"></span>&nbsp;产品名称
+                                    <span class="glyphicon glyphicon-barcode"></span>&nbsp;Product Name
                                 </td>
-                                <td>{{ product.title }}</td>
+                                <td>{{ product.title_en }}</td>
                             </tr>
                             <tr>
                                 <td style="color:#ccc;font-weight:bold;font-style:italic;">
-                                    <span class="glyphicon glyphicon-tag"></span>&nbsp;类别
+                                    <span class="glyphicon glyphicon-tag"></span>&nbsp;Categories
                                 </td>
-                                <td>{{ product.tag.name }}</td>
+                                <td>{{ product.tag.name_en }}</td>
                             </tr>
                             <tr>
                                 <td style="color:#ccc;font-weight:bold;font-style:italic;">
@@ -53,10 +53,10 @@
 
                             <tr>
                                 <td style="color:#ccc;font-weight:bold;font-style:italic;">
-                                    <span class="glyphicon glyphicon-info-sign"></span>&nbsp;产品介绍
+                                    <span class="glyphicon glyphicon-info-sign"></span>&nbsp;Product Info
                                 </td>
                                 <td>
-                                    {{ product.info|safe }}
+                                    {{ product.info_en|safe }}
                                 </td>
                             </tr>
                         </table>

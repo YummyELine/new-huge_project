@@ -2,11 +2,11 @@
     {% if data %}
         <nav aria-label="Page navigation">
             <ul class="pagination">
-                <li><a href="{{ url_for(url,page=1) }}">首页</a></li>
+                <li><a href="{{ url_for(url,page=1) }}">Home</a></li>
                 {% if data.has_prev %}
-                    <li><a href="{{ url_for(url,page=data.prev_num) }}">上一页</a></li>
+                    <li><a href="{{ url_for(url,page=data.prev_num) }}">Pre</a></li>
                 {% else %}
-                    <li class="disabled"><a href="#">上一页</a></li>
+                    <li class="disabled"><a href="#">Pre</a></li>
                 {% endif %}
                 {% for v in data.iter_pages() %}
                     {% if v==data.page %}
@@ -16,11 +16,11 @@
                     {% endif %}
                 {% endfor %}
                 {% if data.has_next %}
-                    <li><a href="{{ url_for(url,page=data.next_num) }}">下一页</a></li>
+                    <li><a href="{{ url_for(url,page=data.next_num) }}">Next</a></li>
                 {% else %}
-                    <li class="disabled"><a href="#">下一页</a></li>
+                    <li class="disabled"><a href="#">Next</a></li>
                 {% endif %}
-                <li><a href="{{ url_for(url,page=data.pages) }}">尾页</a></li>
+                <li><a href="{{ url_for(url,page=data.pages) }}">Last</a></li>
             </ul>
         </nav>
     {% endif %}

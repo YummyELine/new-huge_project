@@ -20,28 +20,28 @@
                 <div class="col-md-12 table-responsive">
                     <table class="table text-left table-bordered" id="movietags">
                         <tr>
-                            <td style="width:10%;">产品分类</td>
+                            <td style="width:10%;">Product Categories</td>
                             <td style="width:90%;">
                                 {% for v in tags %}
                                     <a href="{{ url_for('home_en.product',page=1) }}?tid ={{ v.id }}&time={{ p['time'] }}"
                                        class="label label-info"><span
-                                            class="glyphicon glyphicon-tag"></span>&nbsp;{{ v.name }}
+                                            class="glyphicon glyphicon-tag"></span>&nbsp;{{ v.name_en }}
                                     </a>
                                     &nbsp;{% endfor %}
                             </td>
 
                         </tr>
                         <tr>
-                            <td>添加时间</td>
+                            <td>Add Time</td>
                             <td>
                                 <a href="{{ url_for('home_en.index',page=1) }}?tid ={{ p['tid'] }}&star={{ p['star'] }}&time=1&pm={{ p['pm'] }}&cm={{ p['cm'] }}"
                                    class="label label-default"><span
-                                        class="glyphicon glyphicon-time"></span>&nbsp;最近</a>
+                                        class="glyphicon glyphicon-time"></span>&nbsp;Recent</a>
 
                                 &nbsp;
                                 <a href="{{ url_for('home_en.index',page=1) }}?tid ={{ p['tid'] }}&star={{ p['star'] }}&time=2&pm={{ p['pm'] }}&cm={{ p['cm'] }}"
                                    class="label label-default"><span
-                                        class="glyphicon glyphicon-time"></span>&nbsp;更早</a>
+                                        class="glyphicon glyphicon-time"></span>&nbsp;Earlier</a>
                             </td>
                         </tr>
 
@@ -55,12 +55,12 @@
                             <img src="{{ url_for('static',filename='uploads/'+v.logo) }}" style="width:262px"
                                  class="img-responsive center-block" alt="">
                             <div class="text-left" style="margin-left:auto;margin-right:auto;width:210px;">
-                                <span style="color:#999;font-style: italic;">{{ v.title }}</span><br>
+                                <span style="color:#999;font-style: italic;">{{ v.title_en }}</span><br>
                             </div>
                             <a href="{{ url_for('home_en.product_details',id=v.id) }}" class="btn btn-primary"
                                target="_blank"
                                role="button"><span
-                                    class="glyphicon glyphicon-inbox"></span>&nbsp;产品详情</a>
+                                    class="glyphicon glyphicon-inbox"></span>&nbsp;Product Info</a>
                         </div>
                     </div>
                 {% endfor %}
