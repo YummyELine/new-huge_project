@@ -12,11 +12,13 @@ db = SQLAlchemy(app)
 # app.debug = True
 
 from app.home_cn import home_cn as home_cn_blueprint
+from app.home_en import home_en as home_en_blueprint
 from app.home import home as home_blueprint
 from app.admin import admin as admin_blueprint
 
 
 app.register_blueprint(home_cn_blueprint, url_prefix = "/cn")
+app.register_blueprint(home_en_blueprint, url_prefix = "/en")
 app.register_blueprint(home_blueprint)
 app.register_blueprint(admin_blueprint, url_prefix = "/admin")
 

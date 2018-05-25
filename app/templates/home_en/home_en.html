@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -47,7 +47,7 @@
                 <div class="form-group input-group">
                     <input type="text" class="form-control" placeholder="请输入产品名！" id="key_movie">
                     <span class="input-group-btn">
-                        <a class="btn btn-default" id="do_search"><span class="glyphicon glyphicon-search"></span>&nbsp;搜索</a>
+                        <a class="btn btn-default" id="do_search"><span class="glyphicon glyphicon-search"></span>&nbsp;search</a>
                     </span>
                 </div>
             </form>
@@ -55,18 +55,18 @@
 
                 <li>
                     <a class="curlink" href="{{ url_for('home_cn.about') }}"><span
-                            class="glyphicon glyphicon-question-sign"></span>&nbsp;关于我们</a>
+                            class="glyphicon glyphicon-question-sign"></span>&nbsp;About us</a>
                 </li>
                 <li>
                     <a class="curlink" href="{{ url_for('home_cn.product',page=1) }}"><span
-                            class="glyphicon glyphicon-inbox"></span>&nbsp;产品展示</a>
+                            class="glyphicon glyphicon-inbox"></span>&nbsp;Products</a>
                 </li>
 
                 <li>
-                    <a class="curlink" href="{{ url_for('home_cn.contact') }}"><span class="glyphicon glyphicon-user"></span>&nbsp;联系我们</a>
+                    <a class="curlink" href="{{ url_for('home_cn.contact') }}"><span class="glyphicon glyphicon-user"></span>&nbsp;Contact</a>
                 </li>
                 <li>
-                    <a class="curlink" href="{{ url_for('home_en.about') }}"><span class="glyphicon glyphicon-font"></span>&nbsp;English</a>
+                    <a class="curlink" href="#"><span class="glyphicon glyphicon-font"></span>&nbsp;中文版</a>
                 </li>
             </ul>
         </div>
