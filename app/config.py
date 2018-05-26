@@ -22,5 +22,6 @@ DATABASE = 'newhuge'
 
 SQLALCHEMY_DATABASE_URI = "{}+{}://{}:{}@{}:{}/{}?charset=utf8".format(DIALECT, DRIVER, USERNAME,
                                                                        PASSWORD, HOST, PORT, DATABASE)
+UEDITOR_UPLOAD_PATH = os.path.join(os.path.dirname(__file__),'images')
 
 SQLALCHEMY_TRACK_MODIFICATIONS = False

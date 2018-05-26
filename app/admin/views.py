@@ -240,7 +240,7 @@ def tag_del(id=None):
     return redirect(url_for('admin.tag_list', page=1))
 
 
-# 添加电影
+# 添加产品
 @admin.route("/product/add/", methods=["GET", "POST"])
 @admin_login_req
 @admin_auth

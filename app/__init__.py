@@ -15,12 +15,14 @@ from app.home_cn import home_cn as home_cn_blueprint
 from app.home_en import home_en as home_en_blueprint
 from app.home import home as home_blueprint
 from app.admin import admin as admin_blueprint
+from app.ueditor import bp
 
 
 app.register_blueprint(home_cn_blueprint, url_prefix = "/cn")
 app.register_blueprint(home_en_blueprint, url_prefix = "/en")
 app.register_blueprint(home_blueprint)
 app.register_blueprint(admin_blueprint, url_prefix = "/admin")
+app.register_blueprint(bp)
 
 
 # 404错误页面
