@@ -2,10 +2,11 @@
 
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
-from app import app
-from app import db
+from manage import create_app
+from exts import db
 
-from app.models import User,Userlog,Tag,Movie,Preview,Comment,Moviecol,Auth,Role,Admin,Adminlog,Oplog
+app = create_app()
+from app.models import Tag,Preview,Auth,Role,Admin,Adminlog,Oplog,Product,About,Contact
 
 
 # python manage.py db init  第一次执行

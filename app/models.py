@@ -1,7 +1,7 @@
 # coding:utf8
 
 from datetime import datetime
-from app import db
+from exts import db
 
 # # # _________________________
 # from flask import Flask

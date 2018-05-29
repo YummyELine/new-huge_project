@@ -2,11 +2,11 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, FileField, TextAreaField, SelectField, SelectMultipleField
 from wtforms.validators import DataRequired, ValidationError, EqualTo
-from app.models import Admin, Tag, Auth, Role
+from app.models import Admin
 
-tags = Tag.query.all()
-auth_list = Auth.query.all()
-role_list = Role.query.all()
+# tags = Tag.query.all()
+# auth_list = Auth.query.all()
+# role_list = Role.query.all()
 
 
 # 登录表单
@@ -260,7 +260,7 @@ class ProductForm(FlaskForm):
             DataRequired("请选择标签！")
             ],
         coerce=int,
-        choices=[(v.id, v.name) for v in tags],
+        # choices=[(v.id, v.name) for v in tags],
         description="标签",
         render_kw={
             "class": "form-control",
@@ -423,7 +423,7 @@ class RoleForm(FlaskForm):
             DataRequired("请输入权限名称！")
             ],
         coerce=int,
-        choices=[(v.id, v.name) for v in auth_list],
+        # choices=[(v.id, v.name) for v in auth_list],
         description="权限名称",
         render_kw={
             "class": "form-control",
@@ -481,7 +481,7 @@ class AdminForm(FlaskForm):
     role_id = SelectField(
         label="所属角色",
         coerce=int,
-        choices=[(v.id, v.name) for v in role_list],
+        # choices=[(v.id, v.name) for v in role_list],
         render_kw={
             "class": "form-control",
             }

@@ -6,7 +6,7 @@ from app.admin.forms import (LoginForm, TagForm, ProductForm, PreviewForm, PwdFo
                              ContactForm, AboutForm)
 from app.models import Admin, Tag, Product, Preview, Oplog, Adminlog, Auth, Role, About, Contact
 from functools import wraps  # 定义装饰器
-from app import db, app
+from exts import db
 from werkzeug.utils import secure_filename  # 上传安全
 import os
 import uuid
@@ -223,8 +223,8 @@ def tag_edit(id=None):
 @admin_auth
 def tag_del(id=None):
     tag = Tag.query.filter_by(id=id).first_or_404()
-    product = Product.query.filter(Product.tag_id==tag.id).count()
-    if product >=1 :
+    product = Product.query.filter(Product.tag_id == tag.id).count()
+    if product >= 1:
         flash("已有产品使用这个标签，请先修改产品再删除！", "err")
         return redirect(url_for('admin.tag_list', page=1))
     db.session.delete(tag)
@@ -246,6 +246,8 @@ def tag_del(id=None):
 @admin_auth
 def product_add():
     form = ProductForm()
+    tags = Tag.query.all()
+    form.tag_id.choices = [(v.id, v.name) for v in tags]
     if form.validate_on_submit():
         data = form.data
         # secure_filename 变成安全的名称
@@ -828,6 +830,8 @@ def auth_del(id=None):
 @admin_auth
 def role_add():
     form = RoleForm()
+    auth_list = Auth.query.all()
+    form.auths.choices += [(v.id, v.name) for v in auth_list]
     if form.validate_on_submit():
         data = form.data
         role = Role(
@@ -892,6 +896,8 @@ def role_edit(id=None):
 @admin_auth
 def admin_add():
     form = AdminForm()
+    role_list = Role.query.all()
+    form.role_id.choices += [(v.id, v.name) for v in role_list]
     from werkzeug.security import generate_password_hash
     if form.validate_on_submit():
         data = form.data
