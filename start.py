@@ -10,8 +10,8 @@ import os
 app = create_app()
 
 http_server = HTTPServer(WSGIContainer(app), ssl_options={
-    "certfile": os.path.join(os.path.abspath("ca"), "1_www.new-huge.cn_bundle.crt"),
-    "keyfile": os.path.join(os.path.abspath("ca"), "2_www.new-huge.cn.key"),
+    "certfile": os.path.join(os.path.abspath("ca"), "server.crt"),
+    "keyfile": os.path.join(os.path.abspath("ca"), "server.key"),
     })
-http_server.listen(80)
+http_server.listen(443)
 IOLoop.instance().start()
