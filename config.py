@@ -25,3 +25,4 @@ SQLALCHEMY_DATABASE_URI = "{}+{}://{}:{}@{}:{}/{}?charset=utf8".format(DIALECT, 
 UEDITOR_UPLOAD_PATH = os.path.join(os.path.dirname(__file__),'images')
 
 SQLALCHEMY_TRACK_MODIFICATIONS = False
+
