@@ -21,6 +21,10 @@
             border: 1px solid #ccc
         }
 
+        .footer, .push {
+            height: 50px;
+        }
+
     </style>
     {% block css %}{% endblock %}
 </head>
@@ -63,10 +67,12 @@
                 </li>
 
                 <li>
-                    <a class="curlink" href="{{ url_for('home_en.contact') }}"><span class="glyphicon glyphicon-user"></span>&nbsp;Contact</a>
+                    <a class="curlink" href="{{ url_for('home_en.contact') }}"><span
+                            class="glyphicon glyphicon-user"></span>&nbsp;Contact</a>
                 </li>
                 <li>
-                    <a class="curlink" href="{{ url_for('home_cn.about') }}"><span class="glyphicon glyphicon-font"></span>&nbsp;中文版</a>
+                    <a class="curlink" href="{{ url_for('home_cn.about') }}"><span
+                            class="glyphicon glyphicon-font"></span>&nbsp;中文版</a>
                 </li>
             </ul>
         </div>

@@ -253,12 +253,12 @@ def product_add():
         data = form.data
         # secure_filename 变成安全的名称
         file_logo = secure_filename(form.logo.data.filename)
-        if not os.path.exists(config["UP_DIR"]):
-            os.makedirs(config["UP_DIR"])
+        if not os.path.exists(config.UP_DIR):
+            os.makedirs(config.UP_DIR)
             # win系统不需要增加权限
-        os.chmod(config["UP_DIR"], "rw")
+        # os.chmod(config.UP_DIR, "rw")
         logo = change_filename(file_logo)
-        form.logo.data.save(config["UP_DIR"] + logo)
+        form.logo.data.save(config.UP_DIR + logo)
         product = Product(
             title=data['title'],
             title_en=data['title_en'],
@@ -343,15 +343,15 @@ def product_edit(id=None):
             flash('名称已经存在！', 'err')
             return redirect(url_for('admin.product_edit', id=product.id))
         
-        if not os.path.exists(config["UP_DIR"]):
-            os.makedirs(config["UP_DIR"])
+        if not os.path.exists(config.UP_DIR):
+            os.makedirs(config.UP_DIR)
             # win系统不需要增加权限
-        os.chmod(config["UP_DIR"], "rw")
+        # os.chmod(config.UP_DIR, "rw")
         
         if data["logo"] != "":
             file_logo = secure_filename(form.logo.data.filename)
             product.logo = change_filename(file_logo)
-            form.logo.data.save(config["UP_DIR"] + product.logo)
+            form.logo.data.save(config.UP_DIR + product.logo)
         
         product.tag_id = data["tag_id"]
         product.info = data["info"]
@@ -383,12 +383,12 @@ def preview_add():
         data = form.data
         # secure_filename 变成安全的名称
         file_logo = secure_filename(form.logo.data.filename)
-        if not os.path.exists(config["UP_DIR"]):
-            os.makedirs(config["UP_DIR"])
+        if not os.path.exists(config.UP_DIR):
+            os.makedirs(config.UP_DIR)
             # win系统不需要增加权限
-        os.chmod(config["UP_DIR"], "rw")
+        # os.chmod(config.UP_DIR, "rw")
         logo = change_filename(file_logo)
-        form.logo.data.save(config["UP_DIR"] + logo)
+        form.logo.data.save(config.UP_DIR + logo)
         preview = Preview(
             title=data['title'],
             logo=logo
@@ -454,7 +454,7 @@ def preview_edit(id=None):
         if data["logo"] != "":
             file_logo = secure_filename(form.logo.data.filename)
             preview.logo = change_filename(file_logo)
-            form.logo.data.save(config["UP_DIR"] + preview.logo)
+            form.logo.data.save(config.UP_DIR + preview.logo)
         preview.title = data["title"]
         db.session.add(preview)
         db.session.commit()
