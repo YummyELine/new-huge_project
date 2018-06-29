@@ -256,7 +256,7 @@ def product_add():
         if not os.path.exists(config["UP_DIR"]):
             os.makedirs(config["UP_DIR"])
             # win系统不需要增加权限
-            # os.chmod(config["UP_DIR"], "rw")
+            os.chmod(config["UP_DIR"], "rw")
         logo = change_filename(file_logo)
         form.logo.data.save(config["UP_DIR"] + logo)
         product = Product(
@@ -346,7 +346,7 @@ def product_edit(id=None):
         if not os.path.exists(config["UP_DIR"]):
             os.makedirs(config["UP_DIR"])
             # win系统不需要增加权限
-            # os.chmod(config["UP_DIR"], "rw")
+            os.chmod(config["UP_DIR"], "rw")
         
         if data["logo"] != "":
             file_logo = secure_filename(form.logo.data.filename)
@@ -386,7 +386,7 @@ def preview_add():
         if not os.path.exists(config["UP_DIR"]):
             os.makedirs(config["UP_DIR"])
             # win系统不需要增加权限
-            # os.chmod(config["UP_DIR"], "rw")
+            os.chmod(config["UP_DIR"], "rw")
         logo = change_filename(file_logo)
         form.logo.data.save(config["UP_DIR"] + logo)
         preview = Preview(
