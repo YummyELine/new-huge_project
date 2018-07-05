@@ -31,9 +31,17 @@
             <!--火狐倒影图层-->
         </div>
         <!--序列号按钮-->
+
         <div class="btn_list">
-            <span class="curr"></span><span></span><span></span><span></span><span></span>
+            {% for v in data %}
+                {% if loop.index ==1 %}
+                    <span class="curr"></span>
+                {% else %}
+                    <span></span>
+                {% endif %}
+            {% endfor %}
         </div>
+
     </div>
 
 </div>
